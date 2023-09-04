@@ -1,0 +1,23 @@
+zmodule environment
+zmodule input
+zmodule utility
+zmodule archive
+
+zmodule duration-info
+zmodule git-info
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
+
+zmodule MenkeTechnologies/zsh-cargo-completion
+zmodule b4b4r07/enhancd
+zmodule ohmyzsh/ohmyzsh --root plugins/extract
+zmodule ohmyzsh/ohmyzsh --root plugins/git
+zmodule ohmyzsh/ohmyzsh --root plugins/sudo
+zmodule pacman
+zmodule romkatv/powerlevel10k --use degit
+zmodule zpm-zsh/ls
