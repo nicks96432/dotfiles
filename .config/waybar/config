@@ -165,7 +165,6 @@
     "icon-size": 20,
     "spacing": 0
   },
-  "width": 1920,
   "wlr/workspaces": {
     "disable-scroll": true,
     "format": "{name}",

@@ -13,6 +13,11 @@ zmodule zdharma-continuum/fast-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
 
+zmodule k
+zmodule joke/zim-helm
+zmodule joke/zim-kubectl
+zmodule joke/zim-minikube
+
 zmodule MenkeTechnologies/zsh-cargo-completion
 zmodule b4b4r07/enhancd
 zmodule ohmyzsh/ohmyzsh --root plugins/extract
