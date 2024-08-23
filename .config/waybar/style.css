@@ -21,7 +21,7 @@
 }
 
 #waybar {
-  font-family: "FiraCode Nerd Font Mono Ret", monospace;
+  font-family: "FiraCode Nerd Font Mono Ret", FontAwesome, monospace;
   font-size: 1.2em;
   color: @base04;
   background: @base01;
@@ -37,8 +37,7 @@
   color: @base05;
 }
 
-#workspaces button.visible {
-}
+#workspaces button.visible {}
 
 #workspaces button.active {
   border-radius: 4px;
@@ -82,7 +81,7 @@
 }
 
 #pulseaudio.muted {
-  color: @base0F;
+  color: @base0f;
 }
 
 #pulseaudio.bluetooth {
@@ -96,10 +95,10 @@
 }
 
 #temperature.critical {
-  color: @base0F;
+  color: @base0f;
 }
 
 #window {
   font-size: 0.9em;
-  font-family: "FiraCode Nerd Font Mono Ret", monospace;
+  font-family: "FiraCode Nerd Font Mono Ret", FontAwesome, monospace;
 }

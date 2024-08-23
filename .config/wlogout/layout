@@ -1,0 +1,25 @@
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "Suspend"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot"
+}
+{
+    "label" : "lock",
+    "action" : "swaylock --image ~/圖片/background.webp --config ~/.config/swaylock/config",
+    "text" : "Lock"
+}
+{
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+    "text" : "Logout"
+}

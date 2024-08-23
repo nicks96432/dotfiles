@@ -150,4 +150,4 @@ configuration {
   }
 }
 
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/home/nicks96432/.local/share/rofi/themes/my-theme.rasi"

@@ -38,7 +38,7 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": " {usage}%",
     "tooltip": false
   },
   "hyprland/window": {
@@ -63,21 +63,27 @@
   },
   "layer": "top",
   "memory": {
-    "format": "{}% "
+    "format": " {}%"
   },
-  "modules-center": [
-    "hyprland/window"
-  ],
+  "modules-center": [],
   "modules-left": [
-    "wlr/workspaces",
-    "pulseaudio",
-    "mpd"
+    "hyprland/workspaces",
+    "power-profiles-daemon",
+    "cpu",
+    "custom/gpu",
+    "memory",
+    "mpris"
   ],
   "modules-right": [
+    "network",
+    "temperature",
     "backlight",
     "battery",
+    "pulseaudio",
+    "privacy",
     "tray",
-    "clock"
+    "clock",
+    "custom/wlogout"
   ],
   "mpd": {
     "consume-icons": {
@@ -106,18 +112,51 @@
     "tooltip-format-disconnected": "MPD (disconnected)",
     "unknown-tag": "N/A"
   },
+  "mpris": {
+    "dynamic-order": [
+      "title",
+      "position"
+    ],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "interval": 1,
+    "on-click-middle": "",
+    "on-click-right": "",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": [
+      "firefox"
+    ]
+  },
   "network": {
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": "Disconnected ⚠",
-    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-wifi": "",
+    "format-ethernet": "{ifname} ",
+    "tooltip-format": "{essid} {signalStrength}% {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format": "{ifname} via {gwaddr} "
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname} {gwaddr}",
+    "tooltip": true
   },
   "position": "top",
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
   "pulseaudio": {
-    "format": "{volume}%{icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format": "{icon}{volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-icons": {
       "car": "",
@@ -133,7 +172,7 @@
       "portable": ""
     },
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format-source": " {volume}%",
     "format-source-muted": "",
     "on-click": "pavucontrol",
     "scroll-step": 1
@@ -154,7 +193,7 @@
   },
   "temperature": {
     "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": [
       "",
       "",
@@ -165,21 +204,20 @@
     "icon-size": 20,
     "spacing": 0
   },
-  "wlr/workspaces": {
+  "width": "100%",
+  "hyprland/workspaces": {
     "disable-scroll": true,
-    "format": "{name}",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "default": "",
-      "focused": "",
-      "urgent": ""
-    },
     "on-click": "activate",
     "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
     "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null"
+  },
+  "custom/wlogout": {
+    "format": "",
+    "on-click": "wlogout --buttons-per-row 5 --column-spacing 50"
+  },
+  "custom/gpu-usage": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": "GPU: {}%",
+    "interval": 1
   }
 }

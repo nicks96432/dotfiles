@@ -9,6 +9,7 @@ Terminal related:
 * gdb
 * git
 * kitty
+* mpd
 * tmux
 * vim
 * zsh
@@ -17,7 +18,14 @@ Terminal related:
 Desktop environment:
 
 * dunst
+* cliphist
 * hyprland
+  * hyprshot
+  * hyprpaper
+  * hyprpicker
+  * hyprlock
+* wlogout
+* waybar
 
 ## License
 
