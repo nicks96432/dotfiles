@@ -1,13 +1,13 @@
 * {
-    font:   "FiraCode Nerd Font Mono Ret, jf-openhuninn-2.0 12";
+    font:   "FiraCode Nerd Font Mono Ret, jf-openhuninn-2.0 18";
 
-    bg0:     #F5F5F5BF;
-    bg1:     #7E7E7E80;
-    bg2:     #0860F2E6;
+    bg0:     rgba(56, 49, 51, 0.25);
+    bg1:     rgba(126, 126, 126, 0.5);
+    bg2:     rgba(56, 49, 51, 0.3);
 
-    fg0:     #242424;
-    fg1:     #FFFFFF;
-    fg2:     #24242480;
+    fg0:     rgb(231, 228, 229);
+    fg1:     rgb(231, 228, 229);
+    fg2:     rgb(231, 228, 229);
 
     background-color:   transparent;
     text-color:         @fg0;
@@ -21,14 +21,14 @@ window {
     background-color:   @bg0;
 
     location:       center;
-    width:          640;
-    border-radius:  8;
+    width:          800;
+    border-radius:  20;
 }
 
 inputbar {
     font:       "FiraCode Nerd Font Mono Ret, jf-openhuninn-2.0 20";
-    padding:    12px;
-    spacing:    12px;
+    padding:    20px;
+    spacing:    20px;
     children:   [ icon-search, entry ];
 }
 
@@ -50,7 +50,7 @@ entry {
 }
 
 message {
-    border:             2px 0 0;
+    border:             0 0;
     border-color:       @bg1;
     background-color:   @bg1;
 }
@@ -64,13 +64,12 @@ listview {
     columns:    1;
 
     fixed-height:   false;
-    border:         1px 0 0;
-    border-color:   @bg1;
+    border:         0;
 }
 
 element {
-    padding:            8px 16px;
-    spacing:            16px;
+    padding:            10px 20px;
+    spacing:            20px;
     background-color:   transparent;
 }
 

@@ -1,6 +1,6 @@
 @define-color base00 #181818;
-@define-color base01 #2b2e37;
-@define-color base02 #3b3e47;
+@define-color base01 rgba(56, 49, 51, 0.5);
+@define-color base02 rgba(56, 49, 51, 0.1);
 @define-color base03 #585858;
 @define-color base04 #b8b8b8;
 @define-color base05 #d8d8d8;
@@ -16,15 +16,15 @@
 @define-color base0f #a16946;
 
 * {
-  transition: none;
   box-shadow: none;
+  transition: none;
 }
 
 #waybar {
   font-family: "FiraCode Nerd Font Mono Ret", FontAwesome, monospace;
   font-size: 1.2em;
-  color: @base04;
-  background: @base01;
+  color: @base05;
+  background-color: @base01;
 }
 
 #workspaces {
@@ -32,7 +32,7 @@
 }
 
 #workspaces button {
-  margin: 4px 0;
+  margin: 0 4px;
   padding: 4px;
   color: @base05;
 }
@@ -44,23 +44,18 @@
   background-color: @base02;
 }
 
-#workspaces button.urgent {
-  color: @base08;
-}
-
 #tray {
-  margin: 4px 4px 4px 4px;
+  margin: 4px;
   border-radius: 4px;
-  background-color: @base02;
 }
 
 #tray * {
   padding: 0 6px;
-  border-left: 1px solid @base00;
 }
 
 #mode,
 #battery,
+#power-profiles-daemon,
 #cpu,
 #memory,
 #network,
@@ -70,13 +65,13 @@
 #custom-storage,
 #custom-updates,
 #custom-weather,
+#custom-wlogout,
 #custom-mail,
 #clock,
 #temperature {
-  margin: 4px 2px;
+  margin: 4px;
   padding: 0 6px;
-  background-color: @base02;
-  border-radius: 4px;
+  background-color: transparent;
   min-width: 20px;
 }
 
@@ -96,9 +91,4 @@
 
 #temperature.critical {
   color: @base0f;
-}
-
-#window {
-  font-size: 0.9em;
-  font-family: "FiraCode Nerd Font Mono Ret", FontAwesome, monospace;
 }

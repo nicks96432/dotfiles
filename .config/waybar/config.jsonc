@@ -1,29 +1,22 @@
 {
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "height": 31,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
   "backlight": {
     "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "battery": {
     "format": "{capacity}% {icon}",
     "format-alt": "{time} {icon}",
     "format-charging": "{capacity}% 🗲",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", ""],
     "format-plugged": "{capacity}% ",
     "states": {
       "critical": 15,
@@ -61,7 +54,6 @@
     },
     "numlock": false
   },
-  "layer": "top",
   "memory": {
     "format": " {}%"
   },
@@ -72,7 +64,8 @@
     "cpu",
     "custom/gpu",
     "memory",
-    "mpris"
+    "mpris",
+    "cava"
   ],
   "modules-right": [
     "network",
@@ -113,10 +106,7 @@
     "unknown-tag": "N/A"
   },
   "mpris": {
-    "dynamic-order": [
-      "title",
-      "position"
-    ],
+    "dynamic-order": ["title", "position"],
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
     "interval": 1,
@@ -129,9 +119,7 @@
     "status-icons": {
       "paused": "⏸"
     },
-    "ignored-players": [
-      "firefox"
-    ]
+    "ignored-players": ["firefox"]
   },
   "network": {
     "format-wifi": "",
@@ -142,7 +130,6 @@
     "format-alt": "{ifname} {gwaddr}",
     "tooltip": true
   },
-  "position": "top",
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -160,11 +147,7 @@
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-icons": {
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ],
+      "default": ["", "", ""],
       "hands-free": "",
       "headphone": "",
       "headset": "",
@@ -183,10 +166,7 @@
   },
   "sway/scratchpad": {
     "format": "{icon} {count}",
-    "format-icons": [
-      "",
-      ""
-    ],
+    "format-icons": ["", ""],
     "show-empty": false,
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
@@ -194,11 +174,7 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", ""]
   },
   "tray": {
     "icon-size": 20,
