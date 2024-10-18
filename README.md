@@ -26,6 +26,9 @@ Desktop environment:
   * hyprlock
 * wlogout
 * waybar
+* nwg-dock-hyprland
+* rofi
+* mission-center
 
 ## License
 

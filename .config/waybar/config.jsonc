@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "mod": "dock",
-  "height": 31,
+  "height": 45,
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
@@ -26,13 +26,36 @@
   "battery#bat2": {
     "bat": "BAT2"
   },
+  "cava": {
+    "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "framerate": 30,
+    "autosens": 1,
+    "sensitivity": 100,
+    "bars": 14,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
   "clock": {
     "format-alt": "{:%Y-%m-%d}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
     "format": " {usage}%",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 1
   },
   "hyprland/window": {
     "max-length": 50,
@@ -68,7 +91,6 @@
     "cava"
   ],
   "modules-right": [
-    "network",
     "temperature",
     "backlight",
     "battery",
@@ -119,7 +141,7 @@
     "status-icons": {
       "paused": "⏸"
     },
-    "ignored-players": ["firefox"]
+    "title-len": 32
   },
   "network": {
     "format-wifi": "",
@@ -174,10 +196,12 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
+    "tooptip": false
   },
   "tray": {
     "icon-size": 20,
+    "show-passive-items": "true",
     "spacing": 0
   },
   "width": "100%",
@@ -189,11 +213,13 @@
   },
   "custom/wlogout": {
     "format": "",
-    "on-click": "wlogout --buttons-per-row 5 --column-spacing 50"
+    "on-click": "wlogout --buttons-per-row 2",
+    "tooltip": false
   },
-  "custom/gpu-usage": {
+  "custom/gpu": {
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-    "format": "GPU: {}%",
-    "interval": 1
+    "format": "GPU {}%",
+    "interval": 1,
+    "tooltip": false
   }
 }

@@ -37,7 +37,7 @@ for dir in $(find $SCRIPT_DIR/.config/ -mindepth 1 -maxdepth 1 -type d); do
 done
 
 # electron flags
-electron_apps=(chromium discord electron microsoft-edge-stable)
+electron_apps=(chromium discord electron microsoft-edge-stable notion)
 for app in ${electron_apps[@]}; do
     create_symlink $SCRIPT_DIR/.config/electron-flags.conf $XDG_CONFIG_HOME/$app-flags.conf
 done

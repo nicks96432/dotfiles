@@ -1,5 +1,6 @@
 zmodule environment
 zmodule input
+zmodule completion
 zmodule utility
 zmodule archive
 
