@@ -49,3 +49,6 @@ create_symlink $SCRIPT_DIR/.config/starship.toml $XDG_CONFIG_HOME/starship.toml
 for dir in $(find $SCRIPT_DIR/.local/share -mindepth 1 -maxdepth 1 -type d); do
     create_symlink $dir $XDG_DATA_HOME/${dir##*/}
 done
+
+# for oh-my-zsh rust plugin
+mkdir -p $HOME/.cache/ohmyzsh/completions

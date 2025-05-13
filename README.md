@@ -12,6 +12,7 @@ Terminal related:
 * mpd
 * tmux
 * vim
+* zoxide
 * zsh
   * zim
 
