@@ -37,12 +37,13 @@ for dir in $(find $SCRIPT_DIR/.config/ -mindepth 1 -maxdepth 1 -type d); do
 done
 
 # electron flags
-electron_apps=(chromium discord electron microsoft-edge-stable notion)
+electron_apps=(chromium discord electron microsoft-edge-stable notion vesktop/vesktop)
 for app in ${electron_apps[@]}; do
     create_symlink $SCRIPT_DIR/.config/electron-flags.conf $XDG_CONFIG_HOME/$app-flags.conf
 done
 
 create_symlink $SCRIPT_DIR/.config/code-flags.conf $XDG_CONFIG_HOME/code-flags.conf
+create_symlink $SCRIPT_DIR/.config/starship.toml $XDG_CONFIG_HOME/starship.toml
 
 # .local files
 for dir in $(find $SCRIPT_DIR/.local/share -mindepth 1 -maxdepth 1 -type d); do

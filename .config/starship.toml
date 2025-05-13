@@ -1,0 +1,147 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '[](fg:white)$os$directory${custom.git_clean}${custom.git_dirty}$git_branch$git_status[](fg:prev_bg) '
+right_format = "[](fg:black)$status$jobs$cmd_duration$package$nodejs$python$rust$cmake$conda$username$hostname$time[](fg:prev_bg)"
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+palette = "theme"
+
+[palettes.theme]
+# black = "#282c34"
+# red = "#ea5b76"
+# green = "#98c379"
+# yellow = "#fed552"
+# blue = "#6495cf"
+# purple = "#7e6ca8"
+# cyan = "#5bb6c2"
+# white = "#dcdfe4"
+
+[cmake]
+format = "[ $symbol ($version )]($style)"
+style = "bold fg:purple bg:white"
+symbol = ""
+version_format = "$major.$minor.$patch"
+
+[cmd_duration]
+format = "[ 󱦟 $duration ]($style)"
+style = "fg:yellow bg:black"
+
+[conda]
+format = '[ $symbol$environment ]($style)'
+style = "bold fg:white bg:green"
+
+[directory]
+format = "[ $path ]($style)"
+truncate_to_repo = false
+truncation_length = 10
+truncation_symbol = "..."
+home_symbol = ""
+style = "bold fg:white bg:blue"
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch) ]($style)'
+only_attached = true
+style = "bold fg:black bg:prev_bg"
+symbol = " "
+
+[git_commit]
+only_detached = true
+style = "bold fg:black bg:prev_bg"
+
+[git_status]
+ahead = "⇡$count "
+behind = "⇣$count "
+diverged = ""
+untracked = "?$count "
+modified = "!$count "
+staged = "+$count "
+stashed = "*$count "
+ignore_submodules = true
+format = '[($ahead_behind )$stashed$staged$modified$untracked]($style)'
+style = "bold fg:black bg:prev_bg"
+
+[hostname]
+ssh_only = true
+ssh_symbol = ""
+format = "[@$hostname ]($style)"
+style = "fg:yellow bg:black"
+
+[jobs]
+format = "[ $symbol ($number )]($style)"
+style = "bold fg:blue bg:black"
+symbol = ""
+
+[line_break]
+disabled = true
+
+[nodejs]
+format = "[ $symbol ($version )]($style)"
+style = "bold fg:green bg:black"
+symbol = ""
+version_format = "$raw"
+
+[os]
+disabled = false
+format = "[ $symbol ]($style)"
+style = "fg:black bg:white"
+
+[os.symbols]
+Arch = ""
+Windows = ""
+
+[package]
+format = "[ $symbol($version )]($style)"
+style = "bg:black"
+
+[python]
+format = '[ $symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)'
+version_format = "$raw"
+style = "bold fg:yellow bg:blue"
+
+[rust]
+format = "[ $symbol($version )]($style)"
+style = "bold fg:red bg:yellow"
+version_format = "$raw"
+
+[status]
+disabled = false
+failure_style = "bold fg:red bg:black"
+format = "[ $symbol ($common_meaning$signal_name$maybe_int )]($style)"
+map_symbol = true
+pipestatus = true
+pipestatus_format = "[$pipestatus ]($style)"
+pipestatus_segment_format = "[ $symbol( $signal_name$maybe_int)]($style)"
+pipestatus_separator = "[ |](bold fg:white bg:black)"
+success_style = "bold fg:green bg:black"
+symbol = "✘"
+sigint_symbol = "✘"
+signal_symbol = "✘"
+success_symbol = ""
+
+[time]
+disabled = false
+time_format = "%r"
+format = '[ $time  ](fg:black bg:white)'
+
+[username]
+show_always = false
+style_root = "fg:red bg:black"
+style_user = "fg:yellow bg:black"
+format = "[ $user]($style)"
+
+[custom.git_clean]
+description = "shows a green background if the repo is clean"
+format = "[ ]($style)"
+require_repo = true
+style = "bg:green"
+when = 'test -z "$(git status --porcelain=v1 2>/dev/null)"'
+
+[custom.git_dirty]
+description = "shows a yellow background if the repo is not clean"
+format = "[ ]($style)"
+require_repo = true
+style = "bg:yellow"
+when = 'test -n "$(git status --porcelain=v1 2>/dev/null)"'

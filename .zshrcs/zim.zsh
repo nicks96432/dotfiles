@@ -35,7 +35,9 @@ WORDCHARS=${WORDCHARS//[\/]}
 # -----------------
 
 # Use degit instead of git as the default tool to install and update modules.
-#zstyle ':zim:zmodule' use 'degit'
+zstyle ':zim:zmodule' use 'degit'
+
+zstyle ':zim:git' aliases-prefix 'g'
 
 # --------------------
 # Module configuration
@@ -92,8 +94,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ------------------
 # Initialize modules
 # ------------------
-
-zstyle ':zim:zmodule' use 'degit'
 
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 

@@ -1,28 +1,22 @@
+zmodule completion
 zmodule environment
 zmodule input
-zmodule completion
-zmodule utility
+
 zmodule archive
+zmodule fzf
+zmodule utility
 
 zmodule duration-info
 zmodule git-info
 
 zmodule zsh-users/zsh-completions --fpath src
-
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
 
-zmodule k
-zmodule joke/zim-helm
-zmodule joke/zim-kubectl
-zmodule joke/zim-minikube
-
-zmodule MenkeTechnologies/zsh-cargo-completion
-zmodule b4b4r07/enhancd
-zmodule ohmyzsh/ohmyzsh --root plugins/extract
 zmodule ohmyzsh/ohmyzsh --root plugins/git
+zmodule ohmyzsh/ohmyzsh --root plugins/rust
 zmodule ohmyzsh/ohmyzsh --root plugins/sudo
-zmodule pacman
-zmodule romkatv/powerlevel10k --use degit
-zmodule zpm-zsh/ls
+zmodule kiesman99/zim-zoxide
+zmodule joke/zim-github-cli
+zmodule joke/zim-starship

@@ -2,7 +2,8 @@
 [commit]
 	gpgsign = yes
 [core]
-	editor = code --wait
+    editor = code --wait
+    autocrlf = false
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
@@ -22,6 +23,8 @@
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 [user]
-	name = 龍品瑞
+	name = 我可能很廢
 	email = nicks96432@gmail.com
 	signingkey = F02BDE0C
+[credential]
+	helper = store

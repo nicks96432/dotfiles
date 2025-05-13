@@ -9,5 +9,13 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if command -v bat 2>&1 >/dev/null; then
+    alias cat='bat --paging=never'
+    alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+fi
+
+if command -v z 2>&1 >/dev/null; then
+    alias cd='z'
+fi
+
+alias yay=paru

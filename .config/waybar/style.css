@@ -6,7 +6,7 @@
 }
 
 #waybar {
-  font-family: "FiraCode Nerd Font Mono Ret", FontAwesome, monospace;
+  font-family: "FiraCode Nerd Font Mono Ret", "jf-openhuninn-2.1", FontAwesome, monospace;
   font-size: 1.2em;
   color: @base05;
   background-color: @base01;

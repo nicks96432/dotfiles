@@ -1,15 +1,14 @@
 declare -A completions
 
 completions=(
-    [gh]="gh completion --shell zsh"
-    [npm]="npm completion"
-    [rustup]="rustup completions zsh"
-    [thefuck]="thefuck --alias"
+    ["npm"]="npm completion"
+    ["thefuck"]="thefuck --alias"
 )
 
-for key val in "${(@kv)completions}"; do
+for key val in ${(@kv)completions}; do
     if command -v $key >/dev/null 2>&1; then
-        eval $(eval $val)
+        script=$(eval "$val")
+        eval "$script"
     fi
 done
 
@@ -37,3 +36,7 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+fi

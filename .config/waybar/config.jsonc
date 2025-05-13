@@ -7,7 +7,6 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
-
   "backlight": {
     "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
@@ -27,26 +26,21 @@
     "bat": "BAT2"
   },
   "cava": {
-    "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-    "framerate": 30,
+    "framerate": 60,
     "autosens": 1,
-    "sensitivity": 100,
-    "bars": 14,
-    "lower_cutoff_freq": 50,
-    "higher_cutoff_freq": 10000,
-    "method": "pulse",
+    "bars": 12,
+    "lower_cutoff_freq": 1,
+    "higher_cutoff_freq": 20000,
+    "method": "pipewire",
     "source": "auto",
     "stereo": true,
     "reverse": false,
     "bar_delimiter": 0,
-    "monstercat": false,
+    "monstercat": true,
     "waves": false,
     "noise_reduction": 0.77,
-    "input_delay": 2,
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "actions": {
-      "on-click-right": "mode"
-    }
+    "input_delay": 0,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
   "clock": {
     "format-alt": "{:%Y-%m-%d}",
@@ -78,20 +72,21 @@
     "numlock": false
   },
   "memory": {
-    "format": " {}%"
+    "format": " {}%",
+    "interval": 1
   },
   "modules-center": [],
   "modules-left": [
     "hyprland/workspaces",
     "power-profiles-daemon",
     "cpu",
+    "temperature",
     "custom/gpu",
     "memory",
     "mpris",
     "cava"
   ],
   "modules-right": [
-    "temperature",
     "backlight",
     "battery",
     "pulseaudio",
@@ -194,9 +189,11 @@
     "tooltip-format": "{app}: {title}"
   },
   "temperature": {
+    "interval": 1,
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", ""],
+    "thermal-zone": 3,
     "tooptip": false
   },
   "tray": {
